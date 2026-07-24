@@ -122,22 +122,22 @@ a { color: inherit; text-decoration: none; }
 
 .section-nav {
   display: grid;
-  gap: 15px;
+  gap: 18px;
   width: fit-content;
   margin-top: clamp(50px, 8vh, 78px);
 }
 .section-nav a {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 15px;
   color: #87948e;
-  font: 600 9px/1 var(--mono);
+  font: 600 13px/1.15 var(--mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   transition: color 180ms ease;
 }
 .section-nav a span {
-  width: 25px;
+  width: 32px;
   height: 1px;
   background: currentColor;
   transition: width 180ms ease, background 180ms ease;
@@ -306,10 +306,10 @@ a { color: inherit; text-decoration: none; }
 }
 .experience-detail li {
   position: relative;
-  padding-left: 18px;
+  padding-left: 21px;
   color: #536861;
-  font-size: 11px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.7;
 }
 .experience-detail li::before {
   content: "•";
