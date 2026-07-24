@@ -484,7 +484,10 @@ footer a:hover { color: var(--coral); }
 
 @media (max-width: 620px) {
   .site-shell { padding: 0 22px; }
-  .profile-panel { min-height: 91vh; padding-top: 28px; }
+  .profile-panel {
+    min-height: auto;
+    padding: 28px 0 64px;
+  }
   .profile-copy { margin-top: 76px; }
   .identity-row {
     grid-template-columns: minmax(0, 1fr) 96px;
@@ -494,6 +497,7 @@ footer a:hover { color: var(--coral); }
   .profile-panel h1 { font-size: clamp(48px, 13.5vw, 58px); }
   .profile-panel h2 { font-size: 19px; }
   .headline { font-size: 14px; }
+  .profile-footer { margin-top: 56px; }
   .content-section { padding: 78px 0; }
   .section-heading h2, .contact-section h2 { font-size: 43px; }
   .about-copy p { font-size: 15px; }
