@@ -38,15 +38,6 @@ export default function Home() {
             <a className="monogram" href="#top" aria-label="Jingting Su, home">
               JS<span>RN</span>
             </a>
-            <div className="profile-photo">
-              <Image
-                src={portraitHref}
-                alt={site.profile.photo.alt}
-                width={1382}
-                height={1148}
-                priority
-              />
-            </div>
 
             <div className="profile-copy">
               <p className="location">{site.profile.location}</p>
@@ -61,6 +52,16 @@ export default function Home() {
               <a href="#practice"><span />Practice</a>
               <a href="#credentials"><span />Credentials</a>
             </nav>
+
+            <div className="profile-photo">
+              <Image
+                src={portraitHref}
+                alt={site.profile.photo.alt}
+                width={1382}
+                height={1148}
+                priority
+              />
+            </div>
           </div>
 
           <div className="profile-footer">
@@ -76,12 +77,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="care-signal" aria-hidden="true">
-            <span />
-            <svg viewBox="0 0 280 70" role="presentation">
-              <path d="M0 35h80l12-18 18 40 20-31 12 9h138" />
-            </svg>
-          </div>
         </aside>
 
         <div className="content-panel">
