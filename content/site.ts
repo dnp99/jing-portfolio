@@ -1,10 +1,15 @@
+export interface ExperienceHighlight {
+  label: string;
+  detail: string;
+}
+
 export interface Experience {
   period: string;
   role: string;
   organization: string;
   location: string;
   summary: string;
-  highlights: string[];
+  highlights: ExperienceHighlight[];
   focus: string[];
 }
 
@@ -22,7 +27,13 @@ export const site = {
     location: "GTA, Ontario",
     headline:
       "Coordinated, compassionate care for complex needs at home and in the community.",
+    heroTitle: "Complex community care, clearly coordinated.",
     availability: "Open to community and primary care opportunities",
+    trustSignals: [
+      "CNO Registered Nurse",
+      "Current CPR / BLS",
+      "English + Mandarin",
+    ],
     photo: {
       fileName: "Jingting-Su-Portrait.png",
       alt: "Jingting Su wearing navy nursing scrubs",
@@ -55,11 +66,31 @@ export const site = {
       summary:
         "Independently managing a diverse community caseload while coordinating care across home, primary care, specialist, and community settings.",
       highlights: [
-        "Conduct comprehensive nursing assessments and manage approximately 30–40 active clients with acute, chronic, post-acute, infusion, oncology, and palliative care needs.",
-        "Develop and evaluate individualized care plans with clients, caregivers, physicians, Ontario Health atHome Care Coordinators, and interdisciplinary professionals.",
-        "Provide oncology nursing support including implanted port access and de-access procedures and assessment of treatment-related symptoms.",
-        "Facilitate referrals to physiotherapy, occupational therapy, respiratory therapy, hospice programs, and community support services.",
-        "Precept and mentor newly hired nurses while maintaining accurate electronic documentation and continuity across providers.",
+        {
+          label: "Caseload ownership",
+          detail:
+            "Manage 30–40 active clients across acute, chronic, post-acute, infusion, oncology, and palliative care.",
+        },
+        {
+          label: "Care planning",
+          detail:
+            "Develop and evaluate individualized plans with clients, caregivers, physicians, Ontario Health atHome, and interdisciplinary teams.",
+        },
+        {
+          label: "Oncology support",
+          detail:
+            "Perform implanted port access and de-access while assessing treatment-related symptoms.",
+        },
+        {
+          label: "Care navigation",
+          detail:
+            "Coordinate referrals across rehabilitation, respiratory, hospice, and community support services.",
+        },
+        {
+          label: "Clinical leadership",
+          detail:
+            "Precept newly hired nurses and maintain accurate electronic documentation across providers.",
+        },
       ],
       focus: [
         "Complex assessment",
@@ -77,9 +108,21 @@ export const site = {
       summary:
         "Supported older adults and families through complex chronic, geriatric, behavioural, and palliative care needs in long-term care.",
       highlights: [
-        "Conducted focused assessments, monitored acute status changes, and communicated findings with physicians and interdisciplinary team members.",
-        "Supported health promotion, chronic disease management, individualized care planning, and family communication.",
-        "Delivered culturally responsive care to a predominantly Chinese-speaking resident population.",
+        {
+          label: "Clinical monitoring",
+          detail:
+            "Completed focused assessments, recognized acute changes, and escalated findings to physicians and the interdisciplinary team.",
+        },
+        {
+          label: "Geriatric care",
+          detail:
+            "Supported chronic disease management, individualized care planning, health promotion, and family communication.",
+        },
+        {
+          label: "Culturally responsive practice",
+          detail:
+            "Delivered care to a predominantly Chinese-speaking resident population in English and Mandarin.",
+        },
       ],
       focus: [
         "Geriatric care",

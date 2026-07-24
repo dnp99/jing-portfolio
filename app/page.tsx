@@ -55,6 +55,19 @@ export default function Home() {
               </div>
               <h2>{site.profile.role}</h2>
               <p className="headline">{site.profile.headline}</p>
+              <div className="trust-strip" aria-label="Professional qualifications">
+                {site.profile.trustSignals.map((signal) => (
+                  <span key={signal}>{signal}</span>
+                ))}
+              </div>
+              <div className="hero-actions">
+                <a className="primary-action" href={resumeHref} target="_blank" rel="noreferrer">
+                  {site.resume.label} <Arrow />
+                </a>
+                <a href={site.contact.linkedin} target="_blank" rel="noreferrer">
+                  LinkedIn <Arrow />
+                </a>
+              </div>
             </div>
 
             <nav className="section-nav" aria-label="Portfolio sections">
@@ -62,6 +75,7 @@ export default function Home() {
               <a href="#experience"><span />Experience</a>
               <a href="#practice"><span />Practice</a>
               <a href="#credentials"><span />Credentials</a>
+              <a href="#contact"><span />Contact</a>
             </nav>
           </div>
 
@@ -69,12 +83,6 @@ export default function Home() {
             <p className="availability"><i />{site.profile.availability}</p>
             <div className="profile-links">
               <a href={`mailto:${site.contact.email}`}>Email <Arrow /></a>
-              <a href={site.contact.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn <Arrow />
-              </a>
-              <a href={resumeHref} target="_blank" rel="noreferrer">
-                {site.resume.label} <Arrow />
-              </a>
             </div>
           </div>
 
@@ -82,7 +90,7 @@ export default function Home() {
 
         <div className="content-panel">
           <section className="content-section about-section" id="about">
-            <SectionHeading eyebrow="Professional profile" title="Care that connects the clinical and the practical." />
+            <SectionHeading eyebrow="Professional profile" title={site.profile.heroTitle} />
             <div className="about-copy">
               {site.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
@@ -110,7 +118,12 @@ export default function Home() {
                     <h4>{experience.organization}</h4>
                     <p>{experience.summary}</p>
                     <ul>
-                      {experience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                      {experience.highlights.map((highlight) => (
+                        <li key={highlight.label}>
+                          <strong>{highlight.label}</strong>
+                          <span>{highlight.detail}</span>
+                        </li>
+                      ))}
                     </ul>
                     <div className="tag-list">
                       {experience.focus.map((focus) => <span key={focus}>{focus}</span>)}
@@ -167,7 +180,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="contact-section">
+          <section className="contact-section" id="contact">
             <p className="contact-kicker">Start a conversation</p>
             <h2>Looking for a nurse who can connect the whole care journey?</h2>
             <p>
