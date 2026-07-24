@@ -23,9 +23,14 @@ export const site = {
     headline:
       "Coordinated, compassionate care for complex needs at home and in the community.",
     availability: "Open to community and primary care opportunities",
+    photo: {
+      fileName: "Jingting-Su-Portrait.png",
+      alt: "Jingting Su wearing navy nursing scrubs",
+    },
   },
   contact: {
     email: "jingting.su123@gmail.com",
+    linkedin: "https://www.linkedin.com/in/jingting-su-8b0547243/",
   },
   resume: {
     label: "View resume",

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { site } from "@/content/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -23,6 +25,7 @@ function SectionHeading({
 
 export default function Home() {
   const resumeHref = `${basePath}/${site.resume.fileName}`;
+  const portraitHref = `${basePath}/${site.profile.photo.fileName}`;
 
   return (
     <>
@@ -35,6 +38,15 @@ export default function Home() {
             <a className="monogram" href="#top" aria-label="Jingting Su, home">
               JS<span>RN</span>
             </a>
+            <div className="profile-photo">
+              <Image
+                src={portraitHref}
+                alt={site.profile.photo.alt}
+                width={1382}
+                height={1148}
+                priority
+              />
+            </div>
 
             <div className="profile-copy">
               <p className="location">{site.profile.location}</p>
@@ -55,6 +67,9 @@ export default function Home() {
             <p className="availability"><i />{site.profile.availability}</p>
             <div className="profile-links">
               <a href={`mailto:${site.contact.email}`}>Email <Arrow /></a>
+              <a href={site.contact.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn <Arrow />
+              </a>
               <a href={resumeHref} target="_blank" rel="noreferrer">
                 {site.resume.label} <Arrow />
               </a>
@@ -163,7 +178,12 @@ export default function Home() {
               I’m interested in community, primary care, care coordination,
               and geriatric nursing opportunities across the GTA.
             </p>
-            <a href={`mailto:${site.contact.email}`}>{site.contact.email} <Arrow /></a>
+            <div className="contact-links">
+              <a href={`mailto:${site.contact.email}`}>{site.contact.email} <Arrow /></a>
+              <a href={site.contact.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn <Arrow />
+              </a>
+            </div>
           </section>
 
           <footer>
