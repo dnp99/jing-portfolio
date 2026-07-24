@@ -41,7 +41,18 @@ export default function Home() {
 
             <div className="profile-copy">
               <p className="location">{site.profile.location}</p>
-              <h1>{site.profile.name}<span>, {site.profile.credential}</span></h1>
+              <div className="identity-row">
+                <h1>{site.profile.name}<span>, {site.profile.credential}</span></h1>
+                <div className="profile-photo">
+                  <Image
+                    src={portraitHref}
+                    alt={site.profile.photo.alt}
+                    width={1382}
+                    height={1148}
+                    priority
+                  />
+                </div>
+              </div>
               <h2>{site.profile.role}</h2>
               <p className="headline">{site.profile.headline}</p>
             </div>
@@ -52,16 +63,6 @@ export default function Home() {
               <a href="#practice"><span />Practice</a>
               <a href="#credentials"><span />Credentials</a>
             </nav>
-
-            <div className="profile-photo">
-              <Image
-                src={portraitHref}
-                alt={site.profile.photo.alt}
-                width={1382}
-                height={1148}
-                priority
-              />
-            </div>
           </div>
 
           <div className="profile-footer">
